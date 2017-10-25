@@ -2850,7 +2850,7 @@ void COnStationView::OnQueryBlunders()
 BOOL COnStationView::OnMouseWheel(UINT nFlags, short zDelta, CPoint pt)
 {
 	// slower zoom if Ctrl or Shift key are pressed
-    int iZoom = zDelta / ((nFlags & (MK_CONTROL|MK_SHIFT)) > 0 ? 6 : 3);
+    int iZoom = -zDelta / ((nFlags & (MK_CONTROL|MK_SHIFT)) > 0 ? 6 : 3);
 	OnZoomDelta(iZoom);
 
     return CWnd::OnMouseWheel(nFlags, zDelta, pt);
